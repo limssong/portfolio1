@@ -1,0 +1,610 @@
+<!doctype html>
+<html>
+	<head lang="ko" id="hobbyful">
+		<title>hobbyful</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=no, minimal-ui" /><!-- 970px 미만에서만 적용-->
+		<link type="text/css" rel="stylesheet" href="../css/style_base.css" />
+		<link type="text/css" rel="stylesheet" href="../css/style.css" />
+		<link type="text/css" rel="stylesheet" href="../css/style_effect.css" />
+		<link type="text/css" rel="stylesheet" href="../css/style_responsible.css" />
+		<!-- css3-mediaqueries.js for IE less than 9 -->
+		<!--[if lt IE 9]>
+		<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<![endif]-->
+		<link rel="shortcut icon" href="../img/logo/favicon.png" />
+		<link rel="apple-touch-icon" href="../img/logo/logo.png"/>
+		<script type="text/javascript" src="../js/ex.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrap" id="wrap">
+			<div class="header-wrap" id="header-wrap"><!-- 햄버거 버튼 클릭 시 menu-on 클래스 추가 -->
+				<h1 class="logo-h1"><a href="main.html" title="hobbyful" class="logo-hobbyful">hobbyful</a></h1>
+				<button class="ico-menu ico-menu-new -w" type="button" onclick="showMenu();"><!-- 새 소식 있을 경우 btn-menu-new 클래스 추가 -->
+					<em class="ico-new">New</em>
+				</button>
+				<div class="bg-menu-wrap" id="bg-menu-wrap" onclick="hideMenu();"></div>
+				<div class="menu-wrap">
+					<div class="search-wrap">
+						<button type="button" class="btn-search" onclick="showSearch();">검색</button>
+						<span class="input-search-wrap">
+							<input type="text" class="input-search" placeholder="관심있는 취미 키워드를 검색해보세요." />
+						</span>
+					</div>
+					<div class="menu-cont">
+						<div class="hf-func-wrap">
+							<ul class="hf-func-list">
+								<li class="hf-func">
+									<div class="txt-func -m">정기구독 신청하기!</div>
+									<a href="#;" title="정기구독박스" class="btn-func func-box" onclick="showRegularBox();">정기구독박스</a>
+								</li>
+								<li class="hf-func">
+									<a href="myclass.html" title="내 클래스" class="btn-func func-myclass">내 클래스</a>
+								</li>
+							</ul>
+						</div>
+						<ul class="menu-list">
+							<li class="menu">
+								<a href="class.html" title="취미 클래스" class="btn-menu menu-class">취미 클래스<em class="menu-txt -w">CLASS</em></a>
+							</li>
+							<li class="menu">
+								<a href="magazine.html" title="매거진" class="btn-menu menu-magazine menu-on">매거진<em class="menu-txt -w">MAGAZINE</em></a>
+							</li>
+							<li class="menu">
+								<a href="award.html" title="어워드" class="btn-menu menu-award">어워드<em class="menu-txt -w">AWARD</em></a>
+							</li>
+							<li class="menu">
+								<a href="service.html" title="서비스 소개" class="btn-menu menu-service">서비스 소개<em class="menu-txt -w">ABOUT</em></a>
+							</li>
+						</ul>
+					</div>
+					<div class="gnb-wrap">
+						<div class="gnb-info -m">오늘 주문하시면 2월 15일(D-3)부터 정기배송이 시작됩니다.</div>
+						<ul class="gnb-list"><!-- 로그인 후 : logined 클래스 추가 -->
+							<li class="gnb gnb-login">
+								<a href="#" title="로그인" class="btn-gnb" onclick="showLogin();">로그인</a>
+							</li>
+							<li class="gnb gnb-join">
+								<a href="#" title="회원가입" class="btn-gnb" onclick="showJoin();">회원가입</a>
+							</li>
+							<li class="gnb gnb-logout">
+								<a href="main.html" title="로그아웃" class="btn-gnb" onclick="logout();">로그아웃</a>
+							</li>
+							<li class="gnb gnb-favorite">
+								<a href="myclass.html" title="관심보관함" class="btn-gnb">관심보관함</a>
+							</li>
+							<li class="gnb gnb-mypage">
+								<a href="mypage.html" title="마이페이지" class="btn-gnb">마이페이지</a>
+							</li>
+							<li class="gnb gnb-customer">
+								<a href="customer.html" title="고객센터" class="btn-gnb">고객센터</a>
+							</li>
+						</ul>
+						<div class="hobbyful-txt -w">You're hobbyfull!</div>
+					</div>
+					<a href="#" title="닫기" class="btn-menu-close -w" onclick="hideMenu();">닫기</a>
+				</div>				
+				<div class="search-cont" id="search-cont">
+					<h2 class="search-tit">검색</h2>
+					<div class="search-area">
+						<button type="button" class="btn-search2" onclick="toggleSearchResult();">검색</button>
+						<div class="search-input-wrap">
+							<input type="text" placeholder="클래스와 매거진을 검색해 보세요!" class="search-input" />
+							<ul class="search-txt-list">
+								<li class="search-txt">
+									<a href="#;" title="뜨개질" class="search-txt-link">뜨개질</a><button type="button" class="btn-search-del" onclick="alert('삭제');this.parentNode.style.display='none';">삭제</button>
+								</li>
+								<li class="search-txt">
+									<a href="#;" title="프랑스자수" class="search-txt-link">프랑스자수</a><button type="button" class="btn-search-del" onclick="alert('삭제');this.parentNode.style.display='none';">삭제</button>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn-search-close" onclick="hideSearch();">닫기</button>
+					</div>
+					<div class="search-keyword-wrap">
+						<div class="search-keyword-tit">이런 검색어는 어때요?</div>
+						<ul class="search-keyword-list">
+							<li class="search-keyword"><a href="#" title="프랑스 자수" class="search-keyword-link">프랑스 자수</a></li>
+							<li class="search-keyword"><a href="#" title="뜨개질" class="search-keyword-link">뜨개질</a></li>
+							<li class="search-keyword"><a href="#" title="코바늘" class="search-keyword-link">코바늘</a></li>
+							<li class="search-keyword"><a href="#" title="코스터" class="search-keyword-link">코스터</a></li>
+							<li class="search-keyword"><a href="#" title="어린이" class="search-keyword-link">어린이</a></li>
+							<li class="search-keyword"><a href="#" title="코스터" class="search-keyword-link">코스터</a></li>
+						</ul>
+					</div>
+					<div class="search-result-wrap">
+						<div class="search-result-tab-wrap">
+							<a href="#" title="매거진(4)" class="search-result-tab search-result-tab-on">매거진<span class="search-tab-ea">(4)</span></a>
+							<a href="#" title="클래스(5)" class="search-result-tab">클래스<span class="search-tab-ea">(5)</span></a>
+						</div>
+						<div class="search-result-cont thumb-slide-type02">						
+							<ul class="thumb-slide-list">
+								<li class="thumb-slide play-on"><!-- play 버튼 활성화 시 play-on 클래스 추가 -->
+									<a href="#" class="thumb-slide-link" title="차이나타운에서 건진 소품">
+										<img src="../img/thumb-slide02.png" class="thumb-slide-img" alt="차이나타운에서 건진 소품" />
+										<span class="thumb-slide-play">재생</span>
+									</a>
+									<span class="thumb-slide-link-type">REVIEW</span>
+									<span class="thumb-slide-link-tit">차이나타운에서 차이나타운에서 차이나타운에서 차이나타운에서 차이나타운에서 건진 소품</span>
+									<span class="thumb-slide-link-info">
+										2017.01.28 월요일
+										<em class="thumb-slide-link-nick">by hobbyful</em>
+									</span>
+								</li>
+								<li class="thumb-slide"><!-- play 버튼 활성화 시 play-on 클래스 추가 -->
+									<a href="#" class="thumb-slide-link" title="차이나타운에서 건진 소품">
+										<img src="../img/thumb-slide03.png" class="thumb-slide-img" alt="차이나타운에서 건진 소품" />
+										<span class="thumb-slide-play">재생</span>
+									</a>
+									<span class="thumb-slide-link-type">DIY RECIPE</span>
+									<span class="thumb-slide-link-tit">차이나타운에서 건진 소품</span>
+									<span class="thumb-slide-link-info">
+										2017.01.28 월요일
+										<em class="thumb-slide-link-nick">by hobbyful</em>
+									</span>
+								</li>
+								<li class="thumb-slide play-on"><!-- play 버튼 활성화 시 play-on 클래스 추가 -->
+									<a href="#" class="thumb-slide-link" title="차이나타운에서 건진 소품">
+										<img src="../img/thumb-slide04.png" class="thumb-slide-img" alt="차이나타운에서 건진 소품" />
+										<span class="thumb-slide-play">재생</span>
+									</a>
+									<span class="thumb-slide-link-type">REVIEW</span>
+									<span class="thumb-slide-link-tit">차이나타운에서 건진 소품</span>
+									<span class="thumb-slide-link-info">
+										2017.01.28 월요일
+										<em class="thumb-slide-link-nick">by hobbyful</em>
+									</span>
+								</li>
+								<li class="thumb-slide play-on"><!-- play 버튼 활성화 시 play-on 클래스 추가 -->
+									<a href="#" class="thumb-slide-link" title="차이나타운에서 건진 소품">
+										<img src="../img/thumb-slide05.png" class="thumb-slide-img" alt="차이나타운에서 건진 소품" />
+										<span class="thumb-slide-play">재생</span>
+									</a>
+									<span class="thumb-slide-link-type">REVIEW</span>
+									<span class="thumb-slide-link-tit">차이나타운에서 건진 소품</span>
+									<span class="thumb-slide-link-info">
+										2017.01.28 월요일
+										<em class="thumb-slide-link-nick">by hobbyful</em>
+									</span>
+								</li>
+								<li class="thumb-slide"><!-- play 버튼 활성화 시 play-on 클래스 추가 -->
+									<a href="#" class="thumb-slide-link" title="차이나타운에서 건진 소품">
+										<img src="../img/thumb-slide06.png" class="thumb-slide-img" alt="차이나타운에서 건진 소품" />
+										<span class="thumb-slide-play">재생</span>
+									</a>
+									<span class="thumb-slide-link-type">REVIEW</span>
+									<span class="thumb-slide-link-tit">차이나타운에서 건진 소품</span>
+									<span class="thumb-slide-link-info">
+										2017.01.28 월요일
+										<em class="thumb-slide-link-nick">by hobbyful</em>
+									</span>
+								</li>
+								<li class="thumb-slide"><!-- play 버튼 활성화 시 play-on 클래스 추가 -->
+									<a href="#" class="thumb-slide-link" title="차이나타운에서 건진 소품">
+										<img src="../img/thumb-slide07.png" class="thumb-slide-img" alt="차이나타운에서 건진 소품" />
+										<span class="thumb-slide-play">재생</span>
+									</a>
+									<span class="thumb-slide-link-type">REVIEW</span>
+									<span class="thumb-slide-link-tit">차이나타운에서 건진 소품</span>
+									<span class="thumb-slide-link-info">
+										2017.01.28 월요일
+										<em class="thumb-slide-link-nick">by hobbyful</em>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="toast-wrap" id="toast-wrap">
+					<strong class="toast-tit">asdkjfakjsdfkjasdfkj</strong>asdfasdfasdf
+					<a href="#" title="닫기" class="btn-close-toast" onclick="hideToast();">닫기</a>
+				</div>
+				<div class="regular-box-wrap" id="regular-box-wrap">
+					<div class="regular-box-tit">정기구독박스</div>
+					<div class="regular-box-cont">
+						<div class="regular-box-area">
+							<div class="regular-box">
+								<div class="regular-thumb">
+									<img src="../img/ex2.jpg" alt="" class="thumb-regular" />
+									<span class="mark-regular">1개월</span>
+									<a href="#;" title="삭제" class="btn-del-regular" onclick="this.parentNode.parentNode.style.display='none';">삭제</a>
+								</div>
+								<div class="regular-box-info">
+									<div class="regular-box-info-tit">주얼리 트레이 만들기</div>
+									<div class="regular-box-info-txt">
+										<span class="before-price">30,000원</span>
+										<span class="now-price">27,000원</span>
+										<span class="mark-regular2">정기배송 할인가</span>
+									</div>
+								</div>
+								<div class="regular-box-btn">
+									<button type="button" class="btn-edit-regular btn-regular-up"> 위로</button>
+									<button type="button" class="btn-edit-regular btn-regular-down">아래로</button>
+									<span class="regular-box-btn-info">2월 15일에 배송이 시작됩니다.</span>
+								</div>
+							</div>
+							<div class="regular-box">
+								<div class="regular-thumb">
+									<img src="../img/ex2.jpg" alt="" class="thumb-regular" />
+									<span class="mark-regular">1개월</span>
+									<a href="#;" title="삭제" class="btn-del-regular" onclick="this.parentNode.parentNode.style.display='none';">삭제</a>
+								</div>
+								<div class="regular-box-info">
+									<div class="regular-box-info-tit">주얼리 트레이 만들기</div>
+									<div class="regular-box-info-txt">
+										<span class="before-price">30,000원</span>
+										<span class="now-price">27,000원</span>
+										<span class="mark-regular2">정기배송 할인가</span>
+									</div>
+								</div>
+								<div class="regular-box-btn">
+									<button type="button" class="btn-edit-regular btn-regular-up"> 위로</button>
+									<button type="button" class="btn-edit-regular btn-regular-down">아래로</button>
+									<span class="regular-box-btn-info">2월 15일에 배송이 시작됩니다.</span>
+								</div>
+							</div>
+							<div class="regular-box">
+								<a href="#" title="취미 클래스 담기" class="btn-add-regular">
+									<span class="btn-add-regular-tit">원하는 취미 클래스를<br />정기구독 박스에 담아보세요!</span>
+									<span class="btn-add-regular-txt">* 정기배송 개월 수가 늘어나면 더 저렴한<br />금액으로 취미를 즐길 수 있습니다.</span>
+								</a>
+							</div>
+						</div>
+						<div class="regular-box-summary">
+							<a href="#" title="닫기" class="btn-regular-box btn-close-regular-box" onclick="this.parentNode.parentNode.parentNode.className='regular-box-wrap'; document.getElementById('regular-box-wrap').scrollTop = 0;">닫기</a>
+							<ul class="regular-info-list">
+								<li class="regular-info">
+									<div class="regular-info-tit">정기구독 총액</div>
+									<div class="regular-info-txt">60,000원(2개월)</div>
+								</li>
+								<li class="regular-info">
+									<div class="regular-info-tit">정기구독 할인</div>
+									<div class="regular-info-txt">-3,000원(5% 할인)</div>
+								</li>
+								<li class="regular-info">
+									<div class="regular-info-tit">배송료</div>
+									<div class="regular-info-txt">무료</div>
+								</li>
+								<li class="regular-info">
+									<div class="regular-info-tit">정기구독 최종 총액</div>
+									<div class="regular-info-txt">57,000원)</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="regular-box-bottom">
+						<a href="#;" title="열기" class="btn-regular-box btn-open-regular-box" onclick="this.parentNode.parentNode.className='regular-box-wrap regular-box-open';">열기</a>
+						<div class="regular-box-total">
+							<div class="regular-total-tit">월별 결제 금액</div>
+							<div class="regular-total-txt">28,500원</div>
+						</div>
+						<a href="write-regular.html" title="정기구독 신청하기" class="btn-regular">정기구독 신청하기</a>
+					</div>
+					<a href="#" title="닫기" class="btn-menu-close" onclick="hideRegularBox();">닫기</a>
+				</div>
+			</div>
+			<div class="container">
+				<div class="layout-wrap">
+					<ul class="tab-class-list">
+						<li class="tab-class"><a href="#" title="전체" class="btn-tab-class btn-tab-on">전체</a></li>
+						<li class="tab-class"><a href="#" title="DIY RECIPE" class="btn-tab-class">DIY RECIPE</a></li>
+						<li class="tab-class"><a href="#" title="TREND" class="btn-tab-class">TREND</a></li>
+						<li class="tab-class"><a href="#" title="REVIEW" class="btn-tab-class">REVIEW</a></li>
+					</ul>
+					<div class="magazine-wrap">
+						<ul class="class-list-wrap2">
+							<li class="class-list">
+								<a href="view-magazine.html" title="">
+									<div class="class-list-thumb">
+										<img src="../img/ex2.jpg" alt="" class="thumb-class-list">
+										<span class="thumb-slide-play">재생</span>
+									</div>
+									<div class="class-list-cont">
+										<p class="class-list-tit">DIY RECIPE</p>
+										<p class="class-list-txt">라떼아트 어디까지 해봤니?</p>
+										<p class="class-list-info">2017.01.28 월요일 <span class="thumb-slide-link-nick">by hobbyful</span></p>
+									</div>
+								</a>
+							</li>
+							<li class="class-list play-on">
+								<a href="view-magazine.html" title="">
+									<div class="class-list-thumb">
+										<img src="../img/ex.jpg" alt="" class="thumb-class-list">
+										<span class="thumb-slide-play">재생</span>
+									</div>
+									<div class="class-list-cont">
+										<p class="class-list-tit">DIY RECIPE</p>
+										<p class="class-list-txt">라떼아트 어디까지 해봤니?</p>
+										<p class="class-list-info">2017.01.28 월요일 <span class="thumb-slide-link-nick">by hobbyful</span></p>
+									</div>
+								</a>
+							</li>
+							<li class="class-list play-on">
+								<a href="view-magazine.html" title="">
+									<div class="class-list-thumb">
+										<img src="../img/ex3.jpg" alt="" class="thumb-class-list">
+										<span class="thumb-slide-play">재생</span>
+									</div>
+									<div class="class-list-cont">
+										<p class="class-list-tit">DIY RECIPE</p>
+										<p class="class-list-txt">라떼아트 어디까지 해봤니?</p>
+										<p class="class-list-info">2017.01.28 월요일 <span class="thumb-slide-link-nick">by hobbyful</span></p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="class-list-more-btn">
+							<a href="#" title="more" class="btn-more">more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-wrap">
+				<div class="f-menu-wrap">
+					<ul class="f-menu">
+						<li><a href="#" title="회사소개">회사소개</a></li>						
+						<li><a href="#" title="서비스 이용약관">서비스 이용약관</a></li>
+						<li><a href="#" title="개인정보취급방침">개인정보취급방침</a></li>
+					</ul>
+				</div>
+				<div class="f-info-wrap f-info-customer-wrap">
+					<ul class="f-sns-wrap">
+						<li class="f-sns"><a href="#" title="facebook" class="btn-facebook">facebook</a></li>
+						<li class="f-sns"><a href="#" title="instargram" class="btn-instagram">instargram</a></li>
+					</ul>
+					<div class="f-info-cont f-info-customer">
+						<p class="f-info"><strong class="f-info-tit">고객센터 상담 안내</strong></p>
+						<p class="f-info f-info-inline">평일: 아침 9시 - 밤 10시</p><em class="f-ico-slash -w">/</em>
+						<p class="f-info f-info-inline">토요일: 아침 9시 - 낮 12시</p><em class="f-ico-slash -w">/</em>
+						<p class="f-info f-info-inline">일요일/공휴일: 휴무</p>
+					</div>
+				</div>
+				<div class="f-info-wrap">
+					<div class="f-logo-hobbyful">hobbyful</div>
+					<div class="f-info-cont">
+						<p class="f-info"><strong class="f-info-tit">주식회사 마리테이블</strong></p>
+						<p class="f-info">서울특별시 성동구 서울숲 4길 28-19번길 101호</p>
+						<p class="f-info">대표자: 양순모ㅣ사업자등록번호: 857-00-00000</p>
+						<p class="f-info">contact@hobbyful.co.kr</p>
+						<p class="f-copyright">© Marytable Inc. 2017 All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+			<div class="layer-wrap join-wrap" id="join-wrap">
+				<div class="bg-layer-wrap" onclick="hideJoin();"></div>
+				<div class="join-cont">
+					<h2 class="layer-tit">회원가입</h2>
+					<div class="join-type-wrap">
+						<div class="join-type-cont">
+							<a href="#" title="페이스북으로 가입" class="btn-join-type btn-join-facebook" onclick="showJoinSns();"><span class="ico-join-type ico-join-facebook"></span>페이스북으로 가입</a>
+							<a href="#" title="네이버로 가입" class="btn-join-type btn-join-naver" onclick="showJoinSns();"><span class="ico-join-type ico-join-naver"></span>네이버로 가입</a>
+							<a href="#" title="카카오톡으로 가입" class="btn-join-type btn-join-kakaotalk" onclick="showJoinSns();"><span class="ico-join-type ico-join-kakaotalk"></span>카카오톡으로 가입</a>
+						</div>
+						<div class="join-type-txt-wrap"><span class="join-type-txt">또는</span></div>
+						<div class="join-type-cont">
+							<a href="#" title="이메일로 가입" class="btn-join-type btn-join-email" onclick="showJoinEmail();"><span class="ico-join-type ico-join-email"></span>이메일로 가입</a>
+							<div class="join-info">
+								본인은 만 14세 이상이며, 회원 가입하면 하비풀의 <a href="#" title="서비스 이용약관" class="link-info">서비스 이용약관</a>, <a href="#" title="개인정보 취급방침" class="link-info">개인정보 취급방침</a>에 동의하는 것입니다.
+							</div>
+						</div>
+						<div class="join-login">
+							이미 회원이신가요? <a href="#" title="로그인" class="link-login" onclick="showLogin();">로그인</a>
+						</div>
+					</div>
+					<div class="join-thumb-wrap">
+						<div class="join-thumb">
+							<!-- img src="../img/ex3.jpg" class="thumb-join" alt="프로필 이미지" / -->
+							<label for="btn-add-thumb" class="label-add-thumb2"></label>
+							<input type="file" class="btn-add-thumb" id="btn-add-thumb" />
+						</div>
+					</div>
+					<div class="join-type-email">
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-email">이메일</label>
+								<input type="email" placeholder="이메일 주소를 입력해 주세요." class="join-txt-input" id="join-txt-email" onclick="this.parentNode.className='join-txt-cont auto-complete-on';" />
+								<div class="join-txt-warning">이메일을 다시 확인해주세요.</div>
+								<ul class="auto-complete-list">
+									<li class="auto-complete"><a href="#" title="asdf@naver.com" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@naver.com</a></li>
+									<li class="auto-complete"><a href="#" title="asdf@gmail.com" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@gmail.com</a></li>
+									<li class="auto-complete"><a href="#" title="asdf@hanmail.net" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@hanmail.net</a></li>
+									<li class="auto-complete"><a href="#" title="asdf@nate.com" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@nate.com</a></li>
+									<li class="auto-complete"><a href="#" title="asdf@naver.com" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@naver.com</a></li>
+									<li class="auto-complete"><a href="#" title="asdf@gmail.com" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@gmail.com</a></li>
+									<li class="auto-complete"><a href="#" title="asdf@hanmail.net" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@hanmail.net</a></li>
+									<li class="auto-complete"><a href="#" title="asdf@nate.com" class="btn-auto-complete" onclick="this.parentNode.parentNode.parentNode.className='join-txt-cont';">asdf@nate.com</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-pw">비밀번호</label>
+								<input type="password" placeholder="비밀번호를 입력해 주세요." class="join-txt-input" id="join-txt-pw" />
+								<div class="join-txt-warning block">6~16자 영문 (대/소문자), 숫자, 특수문자를 사용해주세요.</div>
+							</div>
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-confirm">비밀번호 확인</label>
+								<input type="password" placeholder="비밀번호를 다시한번 입력해 주세요." class="join-txt-input" id="join-txt-confirm" />
+								<div class="join-txt-warning block">비밀번호와 일치하지 않습니다.</div>
+							</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont join-name-input">
+								<label class="join-txt-label" for="join-txt-name">이름</label>
+								<input type="text" placeholder="이름을 입력해 주세요." class="join-txt-input" id="join-txt-name" />
+								<div class="btn-sex-wrap">
+									<button type="button" class="btn-sex btn-sex-on" onclick="toggleBtnSex(this);" id="btn-sex-female">여성</button>
+									<button type="button" class="btn-sex" onclick="toggleBtnSex(this);" id="btn-sex-male">남성</button>
+								</div>
+								<div class="join-txt-warning block">한글과 영문 대소문자를<br class="-m" /> 사용하세요. (특수기호, 공백 사용 불가)</div>
+							</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-nick">닉네임</label>
+								<input type="text" placeholder="서비스에서 사용할 닉네임을 입력해 주세요." class="join-txt-input" id="join-txt-nick" />
+								<div class="join-txt-warning">아이디는 5~16글자로 입력해주세요.</div>
+							</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-birth">생년월일</label>
+								<input type="text" placeholder="예) 19840411" class="join-txt-input" id="join-txt-birth" />
+								<div class="join-txt-warning">생년월일을 다시 확인해주세요.</div>
+							</div>
+							<div class="join-txt-info">* 생년월일을 입력해주시면 생일 쿠폰을 보내드립니다.</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-phone">휴대폰번호</label>
+								<input type="tel" placeholder="예) 01099849078" class="join-txt-input" id="join-txt-phone" />
+								<div class="join-txt-warning block">휴대폰 번호를 다시 확인해주세요.</div>
+							</div>
+							<div class="join-txt-info">* 휴대폰 번호로 비밀번호 찾기 및 재설정을 하실 수 있습니다.</div>
+						</div>
+						<div class="join-agree-wrap">
+							<div class="join-agree-txt">
+								하비풀에서 보내드리는 다양한 취미 소식을 받아보시겠어요?
+							</div>
+							<ul class="join-agree-btn-list">
+								<li class="join-agree-btn">
+									<input type="checkbox" id="agree-email" class="btn-join-agree" name="btn-join-agree" />
+									<label for="agree-email" class="join-agree-label">이메일로 받아볼래요</label>
+								</li>
+								<li class="btn-agree-btn">
+									<input type="checkbox" id="agree-sms" class="btn-join-agree" name="btn-join-agree" />
+									<label for="agree-sms" class="join-agree-label">문자로 받아볼래요</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="join-type-sns">
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-nick">닉네임</label>
+								<input type="text" placeholder="서비스에서 사용할 닉네임을 입력해 주세요." class="join-txt-input" id="join-txt-nick" />
+								<div class="join-txt-warning">아이디는 5~16글자로 입력해주세요.</div>
+							</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont join-name-input">
+								<label class="join-txt-label" for="join-txt-name">이름</label>
+								<input type="text" placeholder="이름을 입력해 주세요." class="join-txt-input" id="join-txt-name" />
+								<div class="btn-sex-wrap">
+									<button type="button" class="btn-sex btn-sex-on" onclick="toggleBtnSex(this);" id="btn-sex-female">여성</button>
+									<button type="button" class="btn-sex" onclick="toggleBtnSex(this);" id="btn-sex-male">남성</button>
+								</div>
+								<div class="join-txt-warning block">한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)</div>
+							</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-birth">생년월일</label>
+								<input type="text" placeholder="예) 19840411" class="join-txt-input" id="join-txt-birth" />
+								<div class="join-txt-warning">생년월일을 다시 확인해주세요.</div>
+							</div>
+							<div class="join-txt-info">* 생년월일을 입력해주시면 생일 쿠폰을 보내드립니다.</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-email">이메일</label>
+								<input type="email" placeholder="이메일 주소를 입력해 주세요." class="join-txt-input" id="join-txt-email" />
+								<div class="join-txt-warning block">이메일을 다시 확인해주세요.</div>
+							</div>
+						</div>
+						<div class="join-txt-wrap">
+							<div class="join-txt-cont">
+								<label class="join-txt-label" for="join-txt-phone">휴대폰번호</label>
+								<input type="tel" placeholder="예) 01099849078" class="join-txt-input" id="join-txt-phone" />
+								<div class="join-txt-warning block">휴대폰 번호를 다시 확인해주세요.</div>
+							</div>
+							<div class="join-txt-info">* 휴대폰 번호로 비밀번호 찾기 및 재설정을 하실 수 있습니다.</div>
+						</div>
+						<div class="join-agree-wrap">
+							<div class="join-agree-txt">
+								하비풀에서 보내드리는 다양한 취미 소식을 받아보시겠어요?
+							</div>
+							<ul class="join-agree-btn-list">
+								<li class="join-agree-btn">
+									<input type="checkbox" id="agree-email2" class="btn-join-agree" name="btn-join-agree" />
+									<label for="agree-email2" class="join-agree-label">이메일로 받아볼래요</label>
+								</li>
+								<li class="btn-agree-btn">
+									<input type="checkbox" id="agree-sms2" class="btn-join-agree" name="btn-join-agree" />
+									<label for="agree-sms2" class="join-agree-label">문자로 받아볼래요</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="join-btn-wrap">
+						<a href="#" title="가입하기" class="btn-join" onclick="alert('회원가입완료!!');showJoinComplete();">가입하기</a>
+					</div>
+					<a href="#" title="닫기" class="btn-layer-close" onclick="hideJoin();">닫기</a>
+				</div>
+				<div class="join-complete" id="join-complete">
+					<div class="join-complete-img"><img src="../img/ex.png" class="img-join-complete" alt="" /></div>
+					<div class="join-complete-txt">You're hobbyful!</div>
+					<div class="join-complete-info">
+						<strong class="join-complete-tit">환영합니다 양순모님!</strong>
+						하비풀과 함께 취미가 있는 삶을<br/>
+						즐길 준비가 되셨나요?<br/><br/>
+						하비풀의 취미 클래스는 정기구독으로<br class="-w" />
+						이용하실 수 있습니다.<br/>
+						정기 구독을 블라블라블라
+					</div>
+					<ul class="join-complete-btn-list">
+						<li class="join-complete-btn"><a href="mypage.html" title="정기 결제 수단 등록하기" class="btn-complete btn-register-payment">정기 결제 수단 등록하기</a></li>
+						<li class="join-complete-btn"><a href="#" title="아니오, 다음에 등록할께요!" class="btn-complete btn-later" onclick="hideJoinComplete();">아니오, 다음에 등록할께요!</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="layer-wrap login-wrap" id="login-wrap">
+				<div class="bg-layer-wrap" onclick="hideLogin();"></div>
+				<div class="join-cont">
+					<h2 class="layer-tit">로그인 하기</h2>
+					<div class="join-type-wrap">
+						<div class="float-wrap">
+							<div class="join-type-cont">
+								<a href="#" title="페이스북으로 로그인" class="btn-join-type btn-join-facebook"><span class="ico-join-type ico-join-facebook"></span>페이스북으로 로그인</a>
+								<a href="#" title="네이버로 로그인" class="btn-join-type btn-join-naver"><span class="ico-join-type ico-join-naver"></span>네이버로 로그인</a>
+								<a href="#" title="카카오톡으로 로그인" class="btn-join-type btn-join-kakaotalk"><span class="ico-join-type ico-join-kakaotalk"></span>카카오톡으로 로그인</a>
+							</div>
+							<div class="join-type-txt-wrap"><span class="join-type-txt">또는</span></div>
+							<div class="join-type-cont">
+								<ul class="login-email-wrap">
+									<li class="login-email">
+										<input type="email" class="login-input" placeholder="아이디" />
+									</li>
+									<li class="login-email">
+										<input type="password" class="login-input" placeholder="비밀번호" />
+									</li>
+									<li class="login-keep">
+										<div class="keep-login">
+											<input type="checkbox" class="check-keep-login" id="keep-login" />
+											<label for="keep-login" class="label-keep-login">로그인 유지하기</label>
+										</div>
+										<a href="#" title="로그인" class="btn-login" onclick="completeLogin();">로그인</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="float-wrap">
+							<div class="login-find-wrap">
+								<ul class="login-find-list">
+									<li class="login-find"><a href="layer-login.html" title="아이디 찾기" class="btn-login-find btn-find-id">아이디 찾기</a></li>
+									<li class="login-find"><a href="layer-login.html" title="비밀번호 찾기" class="btn-login-find btn-find-pw">비밀번호 찾기</a></li>
+								</ul>
+							</div>
+							<div class="login-bottom-wrap">
+								아직 하비풀 회원이 아니신가요?
+								<a href="#" title="회원가입" class="link-join" onclick="showJoin();">회원가입</a>
+							</div>
+						</div>
+					</div>
+					<a href="#" title="닫기" class="btn-layer-close" onclick="hideLogin();">닫기</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
