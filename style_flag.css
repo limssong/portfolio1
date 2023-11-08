@@ -1,0 +1,127 @@
+@charset "utf-8";
+/*
+	v1.0 | 2014-09-16
+	All Device : 모든 해상도를 위한 공통 코드를 작성한다.
+	모든 해상도에서 이 코드가 실행됨.
+	limssong
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, mbed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, textarea { margin:0; padding:0; border:0; font-size:100%; -webkit-text-size-adjust:none; vertical-align:baseline; }
+textarea { resize:none; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+ol, ul, li { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
+table { width:100%; border-collapse:collapse; border-spacing:0; }
+img, select, input { vertical-align:middle; border:0; }
+address, caption, cite, code, dfn, em, i, strong, th, var { font-style:normal; font-weight:normal; }
+button { margin:0; padding:0; border:none; cursor:pointer; }
+a { cursor:pointer; }
+li { list-style:none; }
+caption, th { text-align:left; }
+caption { display:none; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal; }
+abbr, acronym { border:0; font-variant:normal; }
+input, textarea, select { padding:0; font-family:inherit; font-size:inherit; font-weight:inherit; outline-style:none; outline:none; }
+legend { color:#404040; }
+strong { font-weight:bold; }
+button { cursor:pointer }
+label { cursor:pointer; }
+hr { display:none; }
+
+/* =float 해제
+----------------------------------------------------------------------------------------------------------------*/
+.f_clear:after { content:"."; display:block; clear:both; height:0; visibility:hidden; }
+.f_clear { display:inline-block; }
+* html .f_clear { height:1%; }
+.f_clear { display:block; }
+
+/* box-sizing
+----------------------------------------------------------------------------------------------------------------*/
+html * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+
+/* = 기본 폰트
+----------------------------------------------------------------------------------------------------------------*/
+body { color:#FFFFFF; font-size:15px; font-family:helvetica, "나눔고딕", Nanum Gothic, ng, AppleGothic, "돋움", Dotum, serif; background:#000000; line-height:1.4; }
+
+/* = Link
+----------------------------------------------------------------------------------------------------------------*/
+a:link,a:active { color:#FFFFFF; text-decoration:none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0) /* 링크영역 터치시 검정색 누르는 효과 색상변경 */; }
+a:visited { color:#FFFFFF; text-decoration:none; }
+a:hover { color:#FFFFFF; text-decoration:none; }
+
+/* index */
+.indexWrap { }
+	.indexMenuWrap { display:none; margin:20px 0 0; }
+	.indexMenuWrap ul { width:100%; overflow:hidden; }
+	.indexMenuWrap ul li { position:relative; float:left; width:46%; height:200px; margin:2%; background:yellow; border-radius:5px; text-align:center; -webkit-transition:all 0.5s; transition:all 0.5s; }
+	.indexMenuWrap ul li a { display:block; position:absolute; top:50%; left:0; width:100%; color:#000000; -webkit-transition:all 0.5s; transition:all 0.5s; -webkit-transform:translate3d(0,-50%,0); transform:translate3d(0,-50%,0); }
+	.indexMenuWrap ul li strong { color:blue; font-weight:bold; }
+
+	.indexPwWrap { /*position:absolute; top:50%; left:0; width:100%; -webkit-transform:translate3d(0,-50%,0); transform:translate3d(0,-50%,0); */text-align:center; }
+	.indexPwWrap ul li label {  }
+	.indexPwWrap ul li span { display:block; margin:10px; padding:5px 10px; border:1px solid #DDDDDD; vertical-align:middle; }
+	.indexPwWrap ul li input { width:100%; color:#FFFFFF; background:none; vertical-align:middle; }
+	.indexPwWrap ul li button { display:inline-block; width:50px; color:#FFFFFF; background:none; border:1px solid #DDDDDD; line-height:30px; vertical-align:middle; text-align:center; }
+	.indexMenuOn .indexMenuWrap { display:block; }
+	.indexMenuOn .indexPwWrap { display:none; }
+	.workHistory { display:none; border:1px solid #444444; border-right:0; border-bottom:0; }
+	.workHistory th,
+	.workHistory td { position:relative; padding:10px; border:1px solid #444444; border-top:0; border-left:0; vertical-align:middle; }
+	.workHistory thead {}
+	.workHistory thead th { text-align:center; font-weight:bold; }
+	.workHistory tbody {}
+	.workHistory tbody th { text-align:center; font-weight:bold; }
+	.workHistory tbody td {}
+	.workHistory tbody th a { display:block; position:absolute; top:0; left:0; width:100%; height:100%; color:#0000FF; -webkit-transition:all 0.5s; transition:all 0.5s; background:yellow; }
+	.workHistory tbody th a:hover { color:#000000; background:#FFFFFF; }
+
+	.workHistory tbody a span { position:absolute; top:50%; left:0; width:100%; -webkit-transform:translateY(-50%); transform:translateY(-50%); }
+	.workHistory tbody a span:hover { text-decoration:underline; }
+
+.my-wrap { padding:20px; font-size:16px; }
+	.my-wrap a { display:block; }
+	.my { height:0; overflow:hidden; line-height:1.8; }
+	.my-on .my { height:auto; margin:20px 0 0; padding:30px; border:5px solid #eaeaea; }
+
+.my-wrap2 { padding:20px; font-size:16px; }
+	.my-wrap2 a { display:block; }
+	.my2-on .my { height:auto; margin:20px 0 0; padding:30px; background:url('bg.jpg') no-repeat; background-size:cover; border:5px solid #eaeaea; text-shadow:3px 3px 5px #000; text-align:right; font-weight:bold; }
+
+/* 태극기 */
+.flag-korea {}
+	.ex-img { margin:0 auto; text-align:center; }
+	.flag-wrap { margin:0 auto; }
+	.flag { position:relative; padding:0 0 66.7%; margin:0 auto; background:#FFFFFF; border:1px solid #000000; }
+	.flag span { display:block; position:relative; width:100%; padding:0 0 17%; margin:8% 0; background:#000000; }
+	.flag i { display:block; position:absolute; top:-1px; left:50%; width:8%; padding:0 0 19%; margin-left:-4%; background:#FFFFFF; }
+	.gun, .gam, .li, .gon { position:absolute; width:16.7%; }
+	.gun { top:14%; left: 16%; transform:rotate(-56deg); }
+	.gam { top:14%; right:16%; transform:rotate(56deg); }
+	.li { bottom:14%; left:16%; transform:rotate(-304deg); }
+	.gon { bottom:14%; right:16%; transform:rotate(304deg); }
+	.taeguk { position:absolute; width:33.3%; padding:0 0 33.3%; top:50%; left:50%; margin:-16.7% 0 0 -16.7%; border-radius:100%; overflow:hidden; transform:rotate(30deg); }
+	.p { position:absolute; top:0; left:0; width:100%; padding:0 0 50%; background:red; border-radius:50% 50% 0 0; }
+	.m { position:absolute; top:50%; left:0; width:100%; padding:0 0 50%; background:blue; border-radius:0 0 50% 50%; }
+	.taeguk em { position:absolute; width:50%; padding:0 0 50%; border-radius:100%; }
+	.p em { bottom:-50%; left:0; background:red; z-index:1; }
+	.m em { top:-50%; right:0; background:blue; z-index:1; }
+
+/* 반응형 웹 : width 768 이상(아이패드) */
+@media all and (min-width:768px) {
+/* index */
+.indexWrap {}
+	.indexMenuWrap .workHistory { display:block; }
+	.indexMenuWrap .workListWrap { display:none; }
+	.indexMenuWrap .workListWrap li { width:250px; }
+	.indexMenuWrap .workListWrap li a { display:block; padding:20px; }
+	.indexMenuWrap .workListWrap li:hover { color:#000000; background:#FFFFFF; }/*
+	.indexMenuWrap ul li:hover a { -webkit-transform:rotateX(180deg); transform:rotateX(180deg); }
+	.indexMenuWrap ul li:nth-child(odd):hover { -webkit-transform:rotateY(180deg); transform:rotateY(180deg); }
+	.indexMenuWrap ul li:nth-child(odd):hover a { -webkit-transform:rotateY(180deg); transform:rotateY(180deg); }
+	.indexMenuWrap ul li:nth-child(3n):hover { -webkit-transform:rotateZ(180deg); transform:rotateZ(180deg); }
+	.indexMenuWrap ul li:nth-child(3n):hover a { -webkit-transform:rotateZ(180deg); transform:rotateZ(180deg); }*/
+	.indexPwWrap .workListWrap li label { display:inline-block; margin:0 10px 0 0; }
+	.indexPwWrap .workListWrap li span { display:inline-block; margin:0 10px 0 0; }
+}
